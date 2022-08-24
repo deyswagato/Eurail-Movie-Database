@@ -1,0 +1,68 @@
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+	font-family: Arial;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.searchbar input[type=text] {
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #f1f1f1;
+}
+
+.searchbar button {
+	float: left;
+	width: 20%;
+	padding: 10px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-left: none;
+	cursor: pointer;
+}
+
+.searchbar button:hover {
+	background: #0b7dda;
+}
+
+.searchbar::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+</style>
+
+<p>Search Movie Title</p>
+<div class="searchbar" style="margin: auto; max-width: 300px">
+	<input type="text" id="searchText" placeholder="Search.." name="search2">
+	<button id="searchMovie" type="button"><i class="fa fa-search"></i></button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+	$("#searchMovie").click(function(e) {
+		e.preventDefault();
+		$.ajax({
+			type : "GET",
+			url : "/content/trigger-servlet.txt",
+			data : {
+				searchText : $("#searchText").val()
+			},
+			success : function(result) {
+				alert('ok');
+			},
+			error : function(result) {
+				alert('error');
+			}
+		});
+	});
+</script>
