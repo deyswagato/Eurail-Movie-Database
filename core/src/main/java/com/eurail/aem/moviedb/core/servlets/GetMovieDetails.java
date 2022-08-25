@@ -35,6 +35,8 @@ public class GetMovieDetails extends SlingSafeMethodsServlet{
 	private static final long serialVersionUID = 1L;
 
 	private static final Logger LOG = LoggerFactory.getLogger(GetMovieDetails.class);
+	
+	private static final String API_KEY = "k_8ruxma70";
 
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
@@ -43,7 +45,7 @@ public class GetMovieDetails extends SlingSafeMethodsServlet{
 		String searchText = request.getParameter("searchText");
 		LOG.error("searchText : " + searchText);
 		// Create a neat value object to hold the URL
-		URL url = new URL("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
+		URL url = new URL("https://imdb-api.com/en/API/SearchMovie/" + API_KEY + "/" + searchText);
 
 		// Open a connection(?) on the URL(??) and cast the response(???)
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
