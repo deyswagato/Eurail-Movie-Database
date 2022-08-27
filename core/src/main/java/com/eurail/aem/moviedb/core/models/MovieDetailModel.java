@@ -1,40 +1,40 @@
 package com.eurail.aem.moviedb.core.models;
 
 public class MovieDetailModel {
-	private String movieTitle;
+	private String id;
+	private String resultType;
+	private String image;
+	private String title;
 	private String description;
-	private String movieImage;
-	private String movieID;
-	private String youtubeID;
 	
-	public String getMovieTitle() {
-		return movieTitle;
+	public String getId() {
+		return id;
 	}
-	public void setMovieTitle(String movieTitle) {
-		this.movieTitle = movieTitle;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getMovieImage() {
-		return movieImage;
+	public String getResultType() {
+		return resultType;
 	}
-	public void setMovieImage(String movieImage) {
-		this.movieImage = movieImage;
+	public void setResultType(String resultType) {
+		this.resultType = resultType;
 	}
-	public String getMovieID() {
-		return movieID;
+	public String getImage() {
+		return image;
 	}
-	public void setMovieID(String movieID) {
-		this.movieID = movieID;
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
-	}
-	public String getYoutubeID() {
-		return youtubeID;
-	}
-	public void setYoutubeID(String youtubeID) {
-		this.youtubeID = youtubeID;
 	}
 }

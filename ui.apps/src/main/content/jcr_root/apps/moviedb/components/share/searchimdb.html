@@ -1,0 +1,70 @@
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+	font-family: Arial;
+    max-width: 1000px; 
+  margin: auto;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.searchbar input[type=text] {
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #f1f1f1;
+}
+
+.searchbar button {
+	float: left;
+	width: 20%;
+	padding: 10px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-left: none;
+	cursor: pointer;
+}
+
+.searchbar button:hover {
+	background: #0b7dda;
+}
+
+.searchbar::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+</style>
+
+<p>Search Movie Title</p>
+<div class="searchbar" style="margin: auto; max-width: 300px">
+	<input type="text" id="searchText" placeholder="Search.." name="search2">
+	<button id="searchMovie" type="button"><i class="fa fa-search"></i></button>
+</div>
+
+<div data-sly-use.info="com.eurail.aem.moviedb.core.models.MovieListModel">
+    <div data-sly-list.movie="${info.movieList}">
+    	<div class="movie-details">
+        	<h1>${movie.movieTitle} ${movie.description}</h1>
+            <img src="${movie.movieImage}" width="250" height="345">
+            <iframe data-sly-test="${movie.youtubeID}" width="600" height="345" src="https://www.youtube.com/embed/${movie.youtubeID}"></iframe>
+        </div>
+    </div>
+</h6>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+	$("#searchMovie").click(function(e) {
+    	var href = new URL(window.location.href);
+		href.searchParams.set('searchText', $("#searchText").val());
+		window.location = href.toString();
+	});
+</script>

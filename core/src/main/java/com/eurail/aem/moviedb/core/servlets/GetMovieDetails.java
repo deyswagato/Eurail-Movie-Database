@@ -58,29 +58,23 @@ public class GetMovieDetails extends SlingSafeMethodsServlet{
 		// Create a neat value object to hold the URL
 		URL url = new URL("https://imdb-api.com/en/API/SearchMovie/" + API_KEY + "/" + searchText);
 
-		JSONTokener tokener;
-		JSONTokener tokenerYoutube;
-		try {
-			tokener = new JSONTokener(url.openStream());
-			list = new ArrayList<>();
-			JSONObject root = new JSONObject(tokener);
-			JSONArray resultsObject = root.getJSONArray("results");
-			for (int i = 0; i < resultsObject.length(); i++) {
-				JSONObject item = resultsObject.getJSONObject(i); 
-				MovieDetailModel movieDetailModel = new MovieDetailModel();
-				movieDetailModel.setMovieID(item.getString("id"));
-				movieDetailModel.setMovieTitle(item.getString("title"));
-				movieDetailModel.setMovieImage(item.getString("image"));
-				url = new URL("https://imdb-api.com/en/API/YouTubeTrailer/" + API_KEY + "/" + item.getString("id"));
-				tokenerYoutube = new JSONTokener(url.openStream());
-				JSONObject rootYoutube = new JSONObject(tokenerYoutube);
-				movieDetailModel.setYoutubeID(rootYoutube.getString("videoId"));
-				list.add(movieDetailModel);
-			}
-			listModel.setMovieList(list);
-
-		} catch (JSONException | IOException e) {
-			e.printStackTrace();
-		}
+		/*
+		 * JSONTokener tokener; JSONTokener tokenerYoutube; try { tokener = new
+		 * JSONTokener(url.openStream()); list = new ArrayList<>(); JSONObject root =
+		 * new JSONObject(tokener); JSONArray resultsObject =
+		 * root.getJSONArray("results"); for (int i = 0; i < resultsObject.length();
+		 * i++) { JSONObject item = resultsObject.getJSONObject(i); MovieDetailModel
+		 * movieDetailModel = new MovieDetailModel();
+		 * movieDetailModel.setMovieID(item.getString("id"));
+		 * movieDetailModel.setMovieTitle(item.getString("title"));
+		 * movieDetailModel.setMovieImage(item.getString("image")); url = new
+		 * URL("https://imdb-api.com/en/API/YouTubeTrailer/" + API_KEY + "/" +
+		 * item.getString("id")); tokenerYoutube = new JSONTokener(url.openStream());
+		 * JSONObject rootYoutube = new JSONObject(tokenerYoutube);
+		 * movieDetailModel.setYoutubeID(rootYoutube.getString("videoId"));
+		 * list.add(movieDetailModel); } listModel.setMovieList(list);
+		 * 
+		 * } catch (JSONException | IOException e) { e.printStackTrace(); }
+		 */
 	}
 }
