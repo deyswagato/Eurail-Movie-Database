@@ -6,12 +6,20 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.json.JSONObject;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.metatype.annotations.Designate;
 
 @Component(service = ApiService.class)
+@Designate(ocd = ApiKeyConfiguration.class)
 public class ApiService {
 	
-	private static final String API_KEY = "k_8ruxma70";
+	private String API_KEY;
+	
+	@Activate
+	protected void activate(ApiKeyConfiguration apiKeyConfiguration) {
+		this.API_KEY = apiKeyConfiguration.api_key();
+	}
 	
 	public InputStream getAPIData(String path, String searchText) {
 		URL url;
