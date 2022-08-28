@@ -13,3 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###############################################################################
+
+#base=./css
+main.css
+navigation.css
+imdbSearch.css
+movieDetails.css
+requestTrailer.css

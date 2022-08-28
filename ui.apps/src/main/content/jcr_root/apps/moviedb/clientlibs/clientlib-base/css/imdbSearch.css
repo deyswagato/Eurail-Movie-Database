@@ -1,0 +1,63 @@
+.searchbar{
+    padding : 20px 0;
+	margin: auto;
+	max-width: 400px;
+}
+
+.searchbar h1 {
+    text-align: center;
+}
+
+.searchbar input[type=text] {
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #f1f1f1;
+}
+
+.searchbar button {
+	float: left;
+	width: 20%;
+	padding: 10px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-left: none;
+	cursor: pointer;
+}
+
+.searchbar button:hover {
+	background: #0b7dda;
+}
+
+.searchbar::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.movie-details img {
+	width: 100%;
+    max-height: 300px;
+}
+
+.movie-details h6 {
+	padding: 15px 0;
+}
