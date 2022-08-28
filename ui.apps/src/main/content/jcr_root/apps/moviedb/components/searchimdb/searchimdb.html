@@ -1,18 +1,18 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-<p>Search Movie Title</p>
-<div class="searchbar" style="margin: auto; max-width: 300px">
+<div class="searchbar">
+	<h1 class="color-white">Search Movie Title</h1>
 	<input type="text" id="searchText" placeholder="Search.." name="search2">
 	<button id="searchMovie" type="button"><i class="fa fa-search"></i></button>
 </div>
 
 <sly data-sly-use.movieListData="com.eurail.aem.moviedb.core.models.MovieListModel">
-    <div class="row" data-sly-list.movie="${movieListData.movieList.results}">
-    	<div class="column" class="movie-details">
-        	<h1>${movie.title} ${movie.description}</h1>
-            <img src="${movie.image}" width="250" height="345">
-            <!--<iframe data-sly-test="${movie.youtubeID}" width="600" height="345" src="https://www.youtube.com/embed/${movie.youtubeID}"></iframe>-->
+	<div class="container-fluid">
+      <div class="row" data-sly-list.movie="${movieListData.movieList.results}">
+        <div class="col-md-3 movie-details">
+        	<a href="/content/moviedb/us/en/movie-details.html?id=${movie.id}">
+				<img src="${movie.image}">
+	            <h6 class="color-white">${movie.title} ${movie.description}</h6>
+			</a>
         </div>
-    </div>
+	  </div>
+   </div>
 </sly>
