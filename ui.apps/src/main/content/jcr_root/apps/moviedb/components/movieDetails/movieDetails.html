@@ -1,0 +1,84 @@
+<div data-sly-use.movieListData="com.eurail.aem.moviedb.core.models.MovieDetailsModel">
+   <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+        	<h2 style="margin-top: 3%" class="color-white">${movieListData.movieDetalsMap["fullTitle"]}</h2>
+        </div>
+	  </div>
+   </div>
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6">
+            <p class="color-white""><strong>${movieListData.movieDetalsMap["releaseDate"]} &middot; ${movieListData.movieDetalsMap["runtimeStr"]}</strong></p>
+         </div>
+         <div class="col-md-6">
+            <p class="color-white" style="margin-left: 80%"><strong>IMDb Rating  </strong>${movieListData.movieDetalsMap["imDbRating"]}&#11088;</p>
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-4">
+            <img width=100% height="400" alt="Responsive image" src="${movieListData.movieDetalsMap['image']}">
+         </div>
+         <div class="col-md-8">
+            <iframe data-sly-test="${movieListData.youtubeMap['videoId']}" width=100% height="400" alt="Responsive image" src="https://www.youtube.com/embed/${movieListData.youtubeMap['videoId']}"></iframe>
+         </div>
+      </div>
+   </div>
+    <div class="container-fluid">
+      <div class="row">
+       <div class="col-md-12">
+          <p></p>
+          <p class="color-white">${movieListData.movieDetalsMap["plot"]}</p>
+          <hr width="100%;" color="white" size="10">
+       </div>
+	  <div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+               <div class="col-md-6">
+                  <p class="color-white"><strong>Director  </strong> ${movieListData.movieDetalsMap["directors"]}</p>
+                  <p class="color-white"><strong>Writers  </strong> ${movieListData.movieDetalsMap["writers"]}</p>
+                  <p class="color-white"><strong>Actors  </strong>${movieListData.movieDetalsMap["stars"]}</p>
+               </div>
+               <div class="col-md-6">
+                  <p class="color-white"><strong>Genres  </strong>${movieListData.movieDetalsMap["genres"]}</p>
+                  <p class="color-white"><strong>Content Rating  </strong>${movieListData.movieDetalsMap["contentRating"]}</p>
+               </div>
+
+        </div>
+		<hr width="100%" color="white" size="10">
+    </div>
+<div class="col-md-12">
+	<h5 class="color-white">Related Titles</h5>
+</div>
+<div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 movie-details">
+        	<a href="/content/moviedb/us/en/movie-details.html?id=${movieListData.movieDetalsMap["similars"][0].id}">
+				<img src="${movieListData.movieDetalsMap["similars"][0].image}">
+	            <h6 class="color-white align-center">${movieListData.movieDetalsMap["similars"][0].title}</h6>
+			</a>
+        </div>
+		<div class="col-md-3 movie-details">
+        	<a href="/content/moviedb/us/en/movie-details.html?id=${movieListData.movieDetalsMap["similars"][1].id}">
+				<img src="${movieListData.movieDetalsMap["similars"][1].image}">
+	            <h6 class="color-white align-center">${movieListData.movieDetalsMap["similars"][1].title}</h6>
+			</a>
+        </div>
+		<div class="col-md-3 movie-details">
+        	<a href="/content/moviedb/us/en/movie-details.html?id=${movieListData.movieDetalsMap["similars"][2].id}">
+				<img src="${movieListData.movieDetalsMap["similars"][2].image}">
+	            <h6 class="color-white align-center">${movieListData.movieDetalsMap["similars"][2].title}</h6>
+			</a>
+        </div>
+		<div class="col-md-3 movie-details">
+        	<a href="/content/moviedb/us/en/movie-details.html?id=${movieListData.movieDetalsMap["similars"][3].id}">
+				<img src="${movieListData.movieDetalsMap["similars"][3].image}">
+	            <h6 class="color-white align-center">${movieListData.movieDetalsMap["similars"][3].title}</h6>
+			</a>
+        </div>
+	  </div>
+   </div>
+</div>
