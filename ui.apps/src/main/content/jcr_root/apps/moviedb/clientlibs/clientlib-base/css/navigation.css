@@ -25,6 +25,15 @@
   color: black;
 }
 
+.header .logo:hover {
+  background-color: black;
+  color: black;
+}
+
+.header .logo img {
+  width: 150px;
+}
+
 .header a.active {
   background-color: dodgerblue;
   color: white;

@@ -14,7 +14,7 @@
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
 <template data-sly-template.group="${@ items='The navigation items for the current level'}" data-sly-use.itemTemplate="item.html">
-	<a href="#default" class="logo">CompanyLogo</a>
+	<a href="/content/moviedb/us/en/index.html" class="logo"><img src="/content/dam/moviedb/logo.png"></a>
     <div class="cmp-navigation__group" data-sly-list="${items}">
         <sly data-sly-call="${itemTemplate.item @ item=item}"></sly>
     </div>
