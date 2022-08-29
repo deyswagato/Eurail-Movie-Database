@@ -19,3 +19,11 @@ body {
 .padding-top-10 {
 	padding-top: 10px !important;
 }
+
+footer p {
+    color: white;
+}
+
+main {
+    min-height: 75vh;
+}
