@@ -1,0 +1,30 @@
+body {
+    max-width: 1000px !important; 
+    margin: auto !important;
+    background-color:black !important;
+}
+
+.container, .container-fluid {
+    padding: 0 !important;
+}
+
+.color-white {
+	color: white;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.padding-top-10 {
+	padding-top: 10px !important;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+}
+
+main {
+    min-height: 60vh;
+}

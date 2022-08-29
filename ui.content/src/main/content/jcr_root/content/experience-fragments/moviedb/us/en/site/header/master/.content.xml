@@ -2,6 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:lastModified="{Date}2022-08-26T19:31:15.326+05:30"
+        cq:lastModifiedBy="admin"
         cq:tags="[]"
         cq:template="/conf/moviedb/settings/wcm/templates/xf-web-variation"
         cq:xfMasterVariation="{Boolean}true"
@@ -14,21 +16,17 @@
             sling:resourceType="moviedb/components/container"
             layout="simple">
             <navigation
+                jcr:lastModified="{Date}2022-08-26T19:31:15.321+05:30"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="moviedb/components/navigation"
                 collectAllPages="false"
+                disableShadowing="false"
                 navigationRoot="/content/moviedb/us/en"
                 skipNavigationRoot="false"
-                structureDepth="1"/>
-            <languagenavigation
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="moviedb/components/languagenavigation"
-                navigationRoot="/content/moviedb/us"
-                structureDepth="2"/>
-            <search
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="moviedb/components/search"
-                searchRoot="/content/moviedb/us"/>
+                structureDepth="1"
+                structureStart="1"/>
+            <logo/>
         </root>
     </jcr:content>
 </jcr:root>
