@@ -3,6 +3,6 @@
     <filter root="/conf/moviedb" mode="merge"/>
     <filter root="/content/moviedb" mode="merge"/>
     <filter root="/content/trigger-servlet" mode="merge"/>
-    <filter root="/content/dam/moviedb/asset.jpg" mode="merge"/>
+    <filter root="/content/dam/moviedb" mode="merge"/>
     <filter root="/content/experience-fragments/moviedb" mode="merge"/>
 </workspaceFilter>
